@@ -96,7 +96,7 @@ class AppController extends Controller
         
     /*
     ** Check if the user is authorized for certain actions
-    ** @param: id of user
+    ** @param: int user - id of user
     ** @return: boolean true or false
     */
     public function isAuthorized($user)

@@ -19,7 +19,7 @@ class UsersController extends AppController
 
     /*
     ** View the user
-    ** @param: id of user
+    ** @param: int $id - id of user
     */
     public function view($id)
     {
@@ -29,7 +29,7 @@ class UsersController extends AppController
 
     /*
     ** Add a new user
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function add()
     {
@@ -47,7 +47,7 @@ class UsersController extends AppController
 
     /*
     ** Edit a user
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function edit($id = null) {
         $user = $this->Users->get($id, [
@@ -68,8 +68,8 @@ class UsersController extends AppController
 
     /*
     ** Delete a user
-    ** @param: id of user
-    ** @return: redirects to index page
+    ** @param: int $id - id of user
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
@@ -95,7 +95,7 @@ class UsersController extends AppController
 
     /*
     ** To log in as a user
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function login()
     {
@@ -111,7 +111,7 @@ class UsersController extends AppController
 
     /*
     ** To log out as a user
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function logout()
 
@@ -122,7 +122,7 @@ class UsersController extends AppController
 
     /*
     ** Check if the user is authorized for certain actions
-    ** @param: id of user
+    ** @param: int $user - id of user
     ** @return: boolean true or false
     */
     public function isAuthorized($user)

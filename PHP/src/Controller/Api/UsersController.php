@@ -19,7 +19,7 @@ class UsersController extends AppController
 
     /*
     ** Add a new user through JWT
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function add()
     {

@@ -26,7 +26,7 @@ class ArticlesController extends AppController
 
     /*
     ** View the article
-    ** @param: id of article
+    ** @param: int $id - id of article
     */
     public function view($id)
     {
@@ -36,7 +36,7 @@ class ArticlesController extends AppController
 
     /*
     ** Add a new article
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function add()
     {
@@ -55,7 +55,7 @@ class ArticlesController extends AppController
     
     /*
     ** Edit an article
-    ** @return: redirects to index page
+    ** @return: \Cake\Http\Response - redirects to index page
     */
     public function edit($id = null)
     {
@@ -74,8 +74,8 @@ class ArticlesController extends AppController
 
     /*
     ** Delete an article
-    ** @param: id of article
-    ** @return: redirects to index page
+    ** @param int $id - id of article
+    ** @return \Cake\Http\Response - redirect to index page
     */
     public function delete($id)
     {
@@ -90,7 +90,7 @@ class ArticlesController extends AppController
 
     /*
     ** Check if the user is authorized for certain actions
-    ** @param: id of user
+    ** @param: int $user - id of user
     ** @return: boolean true or false
     */
     public function isAuthorized($user)
