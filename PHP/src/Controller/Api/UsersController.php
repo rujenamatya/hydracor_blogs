@@ -23,6 +23,15 @@ class UsersController extends AppController
     */
     public function add()
     {
+    
+    if ($this->request->getData("role") == "admin") {
+        $user = $this->Auth->identify();
+        if (!($user['role']== "admin")) {
+            throw new UnauthorizedException('Permission Denied');
+        }
+    }
+    
+    
     $this->Crud->on('afterSave', function(Event $event) {
         if ($event->subject->created) {
             $this->set('data', [
@@ -53,6 +62,7 @@ class UsersController extends AppController
 
         $this->set([
             'success' => true,
+            'role' => $user['role'],
             'data' => [
                 'token' => JWT::encode([
                     'sub' => $user['id'],
@@ -60,7 +70,7 @@ class UsersController extends AppController
                 ],
             Security::salt())
             ],
-            '_serialize' => ['success', 'data']
+            '_serialize' => ['success', 'role', 'data']
         ]);
     }
 }
